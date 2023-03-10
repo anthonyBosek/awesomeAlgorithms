@@ -1,26 +1,45 @@
-// global variables from the DOM
-let testStr = document.getElementById("testStr");
-let testRegEx = document.getElementById("testRegEx");
-let ignore = document.getElementById("ignore");
-let global = document.getElementById("global");
-let btn = document.getElementById("btn");
+// // ** Regular Expressions **
+// // 
 
-// regular expression check function
-const regExCheck = (str, regEx) => {
-    
-    // create new regular expression from input string
-    regEx = ignore.checked && global.checked ? new RegExp(regEx, "gi") :
-            ignore.checked ? new RegExp(regEx, "i") :
-            global.checked ? new RegExp(regEx, "g") :
-            new RegExp(regEx);
+// let sample = "abcdefghijklmnopqrstuvwxyz";
+// let vowels = [];
+// let myRegEx = /a|e|i|o|u/;
+// let arr = sample.split("");
+// let mapCheck = arr.filter((letter, i, arr) => {
+//     if(myRegEx.test(letter)){
+//         return [letter, i]
+//     }
+// });
 
-    let match = str.match(regEx); // match()
-    let test = regEx.test(str); // test()
 
-    console.log("match", match);
-    console.log("test", test);
+// console.log(mapCheck)
 
+let myArr = [
+    {
+        name: 'Chris',
+        age: 43,
+        rank: 'First'
+    },
+    {
+        name: 'Anthony',
+        age: 41,
+        rank: 'Second'
+    },
+    {
+        name: 'Nicole',
+        age: 39,
+        rank: 'Third'
+    },
+    {
+        name: 'Kasha',
+        age: 36,
+        rank: 'Fourth'
+    },
+]
+
+const test = (arr) => {
+    console.log(arr.filter(x => x.name === 'Anthony').pop())
+    return arr.filter(x => x.name === 'Chris').shift()
 }
 
-// event listener for button
-btn.addEventListener("click", () => regExCheck(testStr.value, testRegEx.value));
+console.log(test(myArr))
