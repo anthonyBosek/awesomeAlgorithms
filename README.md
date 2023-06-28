@@ -14,7 +14,7 @@ JavaScript syntax is used for all algorithms. Each algorithm is in its own file.
 
 ### contributors
 
-- Anthony Bosek
+- [Anthony Bosek](anthony-bosek.vercel.app)
 
 ```
 
